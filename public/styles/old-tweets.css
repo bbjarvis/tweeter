@@ -1,0 +1,82 @@
+.old-tweets {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: black;
+  border-style: solid;
+}
+
+.old-tweets:hover {
+  box-shadow: 10px 10px;
+}
+
+.userID {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.username-pic {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.tweet-pic {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.username {
+  display: flex;
+
+}
+
+.old-tweet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.old-tweet-text {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid;
+}
+
+.bottom-row {
+  height: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tweet-age {
+  margin: 5px;
+}
+
+.icons {
+  margin: 5px;
+}
+.fa-flag:hover {
+  color: darkgoldenrod;
+}
+.fa-retweet:hover {
+  color: darkgoldenrod;
+}
+.fa-heart:hover {
+  color: darkgoldenrod;
+}

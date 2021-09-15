@@ -35,3 +35,15 @@ body {
    background-color: #f4f1ec;
    
  }
+
+
+
+ .bottom-footer {
+  height: 30px;
+  width: 100%;
+  background-color: #f4f1ec;
+  font-family: "Bungee", sans-serif;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  bottom: 0;
+ }
