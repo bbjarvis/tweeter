@@ -24,7 +24,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
 
   </head>
 
@@ -68,62 +67,17 @@
       </section>
 
       <!-- Old Tweets box-->
-      <section class="old-tweets-container">
-        <article class="old-tweets">
-          <header class="userID">
-              <div class="username-pic">
-                <img class="tweet-pic" src="/images/profile-hex.png">
-                <p class="username">Newton</p>
-              </div>
-              <div class="user-handle">
-                <p class="handle">@SirIsaac</p>
-              </div>
-          </header>
-          <footer class="old-tweet">
-            <p class="old-tweet-text">Does the moon also fall?</p>
-            <div class="bottom-row">
-              <p class="tweet-age">10 days ago</p>
-              <!-- <p>posted <time class="timeago" datetime="5 September 2021 12:00"></time></p> -->
-              <div class="icons">
-                <i class="fas fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-heart"></i>
-              </div>
-            </div>
-          </footer>
-        </article>
-        <article class="old-tweets">
-          <header class="userID">
-              <div class="username-pic">
-                <img class="tweet-pic" src="/images/profile-hex.png">
-                <p class="username">Dude</p>
-              </div>
-              <div class="user-handle">
-                <p class="handle">@elduderino</p>
-              </div>
-          </header>
-          <footer class="old-tweet">
-            <p class="old-tweet-text">lotsa ins, lotsa out, lotsa what-have-yous</p>
-            <div class="bottom-row">
-              <p class="tweet-age">12 days ago</p>
-              <!-- <p>posted <time class="timeago" datetime="5 September 2021 12:00"></time></p> -->
-              <div class="icons">
-                <i class="fas fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-heart"></i>
-              </div>
-            </div>
-          </footer>
-        </article>
+      <section id="old-tweets-container">
       </section>
     </main>
-
     <footer class="bottom-footer">
 
     </footer>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/tweet-age.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
 
   </body>
 </html>

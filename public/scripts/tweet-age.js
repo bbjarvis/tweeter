@@ -1,5 +1,6 @@
 /*  jQuery using timeago to give date stamp on tweets
 */
 $(document).ready(function() {
-  $("time.timeago").timeago();
+  const now = timeago.format(new Date());
+  $("time.tweet-age").timeago(now);
 });
