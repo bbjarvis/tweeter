@@ -74,4 +74,13 @@ $(document).ready(function() {
 
   renderTweets(tweets);
 
+  $("#new-tweet-form").submit(function (event) {
+    const tweetText = $('#tweet-text').serialize()
+    console.log(tweetText)
+    event.preventDefault();
+
+    $.ajax("/tweets", {method: 'POST', data: tweetText});
+    
+  })
+
 });
