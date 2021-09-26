@@ -47,15 +47,6 @@ $(document).ready(function() {
     return markup;
   };
 
-  $("#new-tweet-form").submit(function (event) {
-    const tweetText = $('#tweet-text').serialize()
-    console.log(tweetText)
-    event.preventDefault();
-
-    $.ajax("/tweets", {method: 'POST', data: tweetText});
-
-  })
-
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET'})
     .then(function (tweets) {
@@ -64,6 +55,25 @@ $(document).ready(function() {
 
   };
 
+
+  $("#new-tweet-form").submit(function (event) {
+    const tweetText = $('#tweet-text').serialize()
+    event.preventDefault();
+
+    if (tweetText.slice(5) === "") {
+      window.alert("Tweet cannot be empty")
+      return;
+    }
+    if ($(".counter").val() <= 0) {
+      window.alert("Tweet is too many characters")
+      return;
+    }
+
+    $.ajax("/tweets", {method: 'POST', data: tweetText});
+
+  })
+
   loadTweets();
+
 
 });
