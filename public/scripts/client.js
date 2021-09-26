@@ -6,7 +6,7 @@
 $(document).ready(function() {
 
   const renderTweets = (tweets) => {
-    // loops through tweets
+    // loops through tweets in reverse so shows newest at top
     tweets.slice().reverse().forEach(tweet => {
 
       // calls createTweetElement for each tweet
@@ -18,6 +18,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = (tweetData) => {
+
     const markup = `
     <section class="old-tweets-container">
     <article class="old-tweets">
@@ -31,7 +32,7 @@ $(document).ready(function() {
           </div>
       </header>
       <footer class="old-tweet">
-        <p class="old-tweet-text">${tweetData.content.text}</p>
+        <p class="old-tweet-text">${escape(tweetData.content.text)}</p>
         <div class="bottom-row">
         <p> <time class="tweet-age" datetme=${tweetData.created_at}></time></p>
           <div class="icons">
@@ -83,7 +84,13 @@ $(document).ready(function() {
 
   })
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   loadTweets();
-
-
 });
+
+
