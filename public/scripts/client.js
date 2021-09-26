@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   const renderTweets = (tweets) => {
     // loops through tweets
-    tweets.forEach(tweet => {
+    tweets.slice().reverse().forEach(tweet => {
 
       // calls createTweetElement for each tweet
       const oldTweet = createTweetElement(tweet);
@@ -55,6 +55,15 @@ $(document).ready(function() {
 
   };
 
+  const newRenderTweet = () => {
+      $.ajax('/tweets', { method: 'GET'})
+      .then(function (tweets) {
+        const newTweet = tweets[tweets.length-1];
+        $('#old-tweets-container').prepend(createTweetElement(newTweet))
+        $('#tweet-text').val("")
+      })
+  };
+
 
   $("#new-tweet-form").submit(function (event) {
     const tweetText = $('#tweet-text').serialize()
@@ -70,6 +79,7 @@ $(document).ready(function() {
     }
 
     $.ajax("/tweets", {method: 'POST', data: tweetText});
+    newRenderTweet();
 
   })
 
