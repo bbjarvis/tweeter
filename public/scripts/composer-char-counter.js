@@ -12,6 +12,9 @@ $(document).ready(function() {
 
     if (charBalance<0) {
     $(this).parent().find(".tweet-count").find(".counter").css("color", "#FF0000")
+    } else {
+    $(this).parent().find(".tweet-count").find(".counter").css("color", "#000000")
+      
     }
   })
 

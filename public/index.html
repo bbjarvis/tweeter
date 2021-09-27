@@ -55,12 +55,15 @@
 
       <!-- Compose tweet box -->
       <section class="new-tweet">
+        <div class="error-hidden">
+            <h4 class='error-message'></h4>
+        </div>
         <h2>ADD LINKS AT TOP OF HTML</h2>
         <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-count">
-            <button type="submit" id="submit-new-tweet">Tweet</button>
+            <button type="submit" id=>Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

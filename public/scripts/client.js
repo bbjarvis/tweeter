@@ -71,11 +71,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     if (tweetText.slice(5) === "") {
-      window.alert("Tweet cannot be empty")
+      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet cannot be empty<i class="fas fa-exclamation-triangle"></i>')
+      $('.error-hidden').slideDown(25)
       return;
-    }
-    if ($(".counter").val() <= 0) {
-      window.alert("Tweet is too many characters")
+    } else if ($(".counter").val() <= 0) {
+      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>')
+      $('.error-hidden').slideDown(25)
       return;
     }
 
