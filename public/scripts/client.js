@@ -78,7 +78,8 @@ $(document).ready(function() {
       $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>')
       $('.error-hidden').slideDown(25)
       return;
-    }
+    } 
+    $('.error-hidden').slideUp(25)
 
     $.ajax("/tweets", {method: 'POST', data: tweetText});
     newRenderTweet();
