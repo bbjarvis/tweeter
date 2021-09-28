@@ -36,11 +36,13 @@ form {
   font-family: "Source Sans Pro", sans-serif;
 }
 #tweet-text {
+  width: 100%;
   display: flex;
   font-family: Source Sans Pro, sans-serif;
   background-color: #f4f1ec;
   border: none;
   border-bottom: solid;
+  word-break: break-all;
 }
 .tweet-count {
   display: flex;

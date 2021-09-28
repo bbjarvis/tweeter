@@ -18,7 +18,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = (tweetData) => {
-
+    //  tweet html
     const markup = `
     <section class="old-tweets-container">
     <article class="old-tweets">
@@ -49,6 +49,7 @@ $(document).ready(function() {
   };
 
   const loadTweets = () => {
+    //  load existing tweets
     $.ajax('/tweets', { method: 'GET'})
     .then(function (tweets) {
     renderTweets(tweets);
@@ -57,19 +58,24 @@ $(document).ready(function() {
   };
 
   const newRenderTweet = () => {
+    // render new tweet from #new-tweet-form
       $.ajax('/tweets', { method: 'GET'})
       .then(function (tweets) {
+        //  get new tweet which is last element in array
         const newTweet = tweets[tweets.length-1];
+        //  add new tweet to top of old tweet container, clear form and counter
         $('#old-tweets-container').prepend(createTweetElement(newTweet))
         $('#tweet-text').val("")
+        $('.counter').val(140)
       })
   };
 
 
   $("#new-tweet-form").submit(function (event) {
+
     const tweetText = $('#tweet-text').serialize()
     event.preventDefault();
-
+    //  check if empty or too many chars
     if (tweetText.slice(5) === "") {
       $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet cannot be empty<i class="fas fa-exclamation-triangle"></i>')
       $('.error-hidden').slideDown(25)
@@ -78,20 +84,23 @@ $(document).ready(function() {
       $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>')
       $('.error-hidden').slideDown(25)
       return;
-    } 
-    $('.error-hidden').slideUp(25)
+    }
+    //  hide error box if triggered
+    $('.error-hidden').slideUp()
 
     $.ajax("/tweets", {method: 'POST', data: tweetText});
     newRenderTweet();
 
   })
-
+  
+  //  escape funtion protects from malicious
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //  load old tweets
   loadTweets();
 });
 

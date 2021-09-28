@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -37,7 +38,10 @@
       </div>
 
     </nav>
-    <!-- Header -->
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+          <!-- Header -->
     <header class="top-header">
       <div>
         <img src="/images/profile-hex.png">
@@ -48,17 +52,12 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-
+    <section class="tweet-container">
       <!-- Compose tweet box -->
       <section class="new-tweet">
         <div class="error-hidden">
             <h4 class='error-message'></h4>
         </div>
-        <h2>ADD LINKS AT TOP OF HTML</h2>
         <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -72,10 +71,8 @@
       <!-- Old Tweets box-->
       <section id="old-tweets-container">
       </section>
+    </section>
     </main>
-    <footer class="bottom-footer">
-
-    </footer>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>

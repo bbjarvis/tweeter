@@ -21,6 +21,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -36,14 +38,23 @@ body {
    
  }
 
-
-
- .bottom-footer {
-  height: 30px;
-  width: 100%;
-  background-color: #f4f1ec;
-  font-family: "Bungee", sans-serif;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  bottom: 0;
+ .tweet-container {
+   width: 100%;
  }
+
+ /* Desktop styles */
+@media only screen and (min-width: 1024px) {
+
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    justify-items: right;
+  }
+  .tweet-container {
+    width: 66.6%;
+  }
+
+}
+
