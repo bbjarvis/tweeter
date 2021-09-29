@@ -2,7 +2,6 @@ $(document).ready(function() {
   // --- our code goes here ---
 
   $('#tweet-text').on("input", function() {
-    // let charCount = $(this).val().length;
     let charCount = $(this).val().length;
 
     const charMax = 140;

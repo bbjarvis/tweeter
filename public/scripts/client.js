@@ -18,6 +18,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = (tweetData) => {
+      
     //  tweet html
     const markup = `
     <section class="old-tweets-container">
@@ -31,16 +32,14 @@ $(document).ready(function() {
             <p class="handle">${tweetData.user.handle}</p>
           </div>
       </header>
-      <footer class="old-tweet">
         <p class="old-tweet-text">${escape(tweetData.content.text)}</p>
-        <div class="bottom-row">
-        <p> <time class="tweet-age" datetme=${tweetData.created_at}></time></p>
+      <footer class="bottom-row">
+          <p class="tweet-age">${timeAgo(tweetData)}</p>
           <div class="icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-heart"></i>
           </div>
-        </div>
       </footer>
     </article>
   </section>
@@ -62,7 +61,9 @@ $(document).ready(function() {
       $.ajax('/tweets', { method: 'GET'})
       .then(function (tweets) {
         //  get new tweet which is last element in array
-        const newTweet = tweets[tweets.length-1];
+        let newTweet = tweets[tweets.length-1];
+        newTweet.created_at = new Date();
+    
         //  add new tweet to top of old tweet container, clear form and counter
         $('#old-tweets-container').prepend(createTweetElement(newTweet))
         $('#tweet-text').val("")
@@ -99,6 +100,10 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  const timeAgo = (tweetData) => {
+    return timeago.format(tweetData.created_at);
+  }
 
   //  load old tweets
   loadTweets();
