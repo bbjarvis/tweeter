@@ -11,10 +11,10 @@ $(document).ready(function() {
     //  make "counter" change with each char entered
     $(this).parent().find(".tweet-count").find(".counter").html(charBalance)
     
-    if (charCount<0) {
-    $(this).parent().find(".tweet-count").find(".counter").css("color", "#FF0000")
+    if (charBalance<0) {
+    $(this).parent().find(".tweet-count").find(".counter").addClass("counter-over")
     } else {
-    $(this).parent().find(".tweet-count").find(".counter").css("color", "#000000")  
+    $(this).parent().find(".tweet-count").find(".counter").removeClass("counter-over")
     }
 
   })

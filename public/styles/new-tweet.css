@@ -53,3 +53,6 @@ button {
   color: #000000;
   align-self: flex-end;
 }
+.counter-over {
+  color: #FF0000;
+}

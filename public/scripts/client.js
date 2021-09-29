@@ -34,7 +34,7 @@ $(document).ready(function() {
       </header>
         <p class="old-tweet-text">${escape(tweetData.content.text)}</p>
       <footer class="bottom-row">
-          <p class="tweet-age">${timeAgo(tweetData)}</p>
+          <p class="tweet-age">${timeago.format(tweetData.created_at)}</p>
           <div class="icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -62,12 +62,11 @@ $(document).ready(function() {
       .then(function (tweets) {
         //  get new tweet which is last element in array
         let newTweet = tweets[tweets.length-1];
-        newTweet.created_at = new Date();
+        newTweet.created_at = Date.now();
     
         //  add new tweet to top of old tweet container, clear form and counter
         $('#old-tweets-container').prepend(createTweetElement(newTweet))
-        $('#tweet-text').val("")
-        $('.counter').val(140)
+
       })
   };
 
@@ -89,8 +88,11 @@ $(document).ready(function() {
     //  hide error box if triggered
     $('.error-hidden').slideUp()
 
-    $.ajax("/tweets", {method: 'POST', data: tweetText});
-    newRenderTweet();
+    $.ajax("/tweets", {method: 'POST', data: tweetText})
+    .then(() => {$('#old-tweets-container').empty();
+    $('#tweet-text').val("")
+    $('.counter').val(140)
+    loadTweets()})
 
   })
   
@@ -100,10 +102,6 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
-  const timeAgo = (tweetData) => {
-    return timeago.format(tweetData.created_at);
-  }
 
   //  load old tweets
   loadTweets();
