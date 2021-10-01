@@ -51,50 +51,35 @@ $(document).ready(function() {
     //  load existing tweets
     $.ajax('/tweets', { method: 'GET'})
     .then(function (tweets) {
-    renderTweets(tweets);
-    })
+      renderTweets(tweets);
+    });
 
   };
-
-  const newRenderTweet = () => {
-    // render new tweet from #new-tweet-form
-      $.ajax('/tweets', { method: 'GET'})
-      .then(function (tweets) {
-        //  get new tweet which is last element in array
-        let newTweet = tweets[tweets.length-1];
-        newTweet.created_at = Date.now();
-    
-        //  add new tweet to top of old tweet container, clear form and counter
-        $('#old-tweets-container').prepend(createTweetElement(newTweet))
-
-      })
-  };
-
 
   $("#new-tweet-form").submit(function (event) {
 
-    const tweetText = $('#tweet-text').serialize()
+    const tweetText = $('#tweet-text').serialize();
     event.preventDefault();
     //  check if empty or too many chars
     if (tweetText.slice(5) === "") {
-      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet cannot be empty<i class="fas fa-exclamation-triangle"></i>')
-      $('.error-hidden').slideDown(25)
+      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet cannot be empty<i class="fas fa-exclamation-triangle"></i>');
+      $('.error-hidden').slideDown(25);
       return;
     } else if ($(".counter").val() <= 0) {
-      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>')
-      $('.error-hidden').slideDown(25)
+      $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>');
+      $('.error-hidden').slideDown(25);
       return;
     }
     //  hide error box if triggered
-    $('.error-hidden').slideUp()
+    $('.error-hidden').slideUp();
 
     $.ajax("/tweets", {method: 'POST', data: tweetText})
     .then(() => {$('#old-tweets-container').empty();
-    $('#tweet-text').val("")
-    $('.counter').val(140)
-    loadTweets()})
+    $('#tweet-text').val("");
+    $('.counter').val(140);
+    loadTweets()});
 
-  })
+  });
   
   //  escape funtion protects from malicious
   const escape = function (str) {
