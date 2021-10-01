@@ -15,8 +15,7 @@ As there will only be one user on the app, any tweet submitted will be radomly g
 !["Example Tweets"]()
 
 The page has responsive design for above and below 768px:
-!["Responsive 1"]()
-!["Responsive 2"]()
+!["Responsive"]()
 
 ## Getting Started
 
