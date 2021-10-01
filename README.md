@@ -6,16 +6,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 Default user, handle, image for Header:
-!["Tweeter Header"]()
+!["Tweeter Header"](https://github.com/bbjarvis/tweeter/blob/master/docs/Tweeter%20Header.png)
 
 There are 2 stock tweets already in in the package-lock.json:
-!["Initial Tweets"]()
+!["Initial Tweets"](https://github.com/bbjarvis/tweeter/blob/master/docs/Initial%20Tweets.png)
 
 As there will only be one user on the app, any tweet submitted will be radomly given a username, handle, and image:
-!["Example Tweets"]()
+!["Example Tweets"](https://github.com/bbjarvis/tweeter/blob/master/docs/Example%20Tweets.png)
 
 The page has responsive design for above and below 768px:
-!["Responsive"]()
+!["Responsive"](https://github.com/bbjarvis/tweeter/blob/master/docs/Responsive.png)
 
 ## Getting Started
 
