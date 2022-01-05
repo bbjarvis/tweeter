@@ -2,20 +2,21 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This repository is the starter code for the project: 
+Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
 ## Final Product
 Default user, handle, image for Header:
-!["Tweeter Header"](https://github.com/bbjarvis/tweeter/blob/master/docs/Tweeter%20Header.png)
+!["Tweeter Header"](/docs/TweeterHeader.png)
 
-There are 2 stock tweets already in in the package-lock.json:
-!["Initial Tweets"](https://github.com/bbjarvis/tweeter/blob/master/docs/Initial%20Tweets.png)
+There are 2 stock tweets already in in the initial-tweets.json:
+!["Initial Tweets"](/docs/Initial%20Tweets.png)
 
 As there will only be one user on the app, any tweet submitted will be radomly given a username, handle, and image:
-!["Example Tweets"](https://github.com/bbjarvis/tweeter/blob/master/docs/Example%20Tweets.png)
+!["Example Tweets"](/docs/Example%20Tweets.png)
 
 The page has responsive design for above and below 768px:
-!["Responsive"](https://github.com/bbjarvis/tweeter/blob/master/docs/Responsive.png)
+!["Responsive"](/docs/Responsive.png)
 
 ## Getting Started
 

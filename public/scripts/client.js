@@ -6,15 +6,22 @@
 $(document).ready(function() {
 
   const renderTweets = (tweets) => {
+    const container = $('#old-tweets-container');
+
+    container.empty();
+    $('#tweet-text').val("");
+    $('.counter').val(140);
+
     // loops through tweets in reverse so shows newest at top
-    tweets.slice().reverse().forEach(tweet => {
+    for (const tweet of tweets) {
 
       // calls createTweetElement for each tweet
       const oldTweet = createTweetElement(tweet);
 
       // takes return value and appends it to the tweets container
-      $('#old-tweets-container').append(oldTweet);
-    });
+      container.prepend(oldTweet);
+    }
+
   };
 
   const createTweetElement = (tweetData) => {
@@ -65,7 +72,9 @@ $(document).ready(function() {
       $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet cannot be empty<i class="fas fa-exclamation-triangle"></i>');
       $('.error-hidden').slideDown(25);
       return;
-    } else if ($(".counter").val() <= 0) {
+    }
+    
+    if ($(".counter").val() <= 0) {
       $('.error-message').html('<i class="fas fa-exclamation-triangle"></i>Tweet is too many characters<i class="fas fa-exclamation-triangle"></i>');
       $('.error-hidden').slideDown(25);
       return;
@@ -73,11 +82,8 @@ $(document).ready(function() {
     //  hide error box if triggered
     $('.error-hidden').slideUp();
 
-    $.ajax("/tweets", {method: 'POST', data: tweetText})
-    .then(() => {$('#old-tweets-container').empty();
-    $('#tweet-text').val("");
-    $('.counter').val(140);
-    loadTweets()});
+    $.post("/tweets", tweetText)
+    .then(() => {loadTweets()});
 
   });
   
