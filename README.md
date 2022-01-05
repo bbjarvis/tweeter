@@ -10,10 +10,10 @@ Default user, handle, image for Header:
 !["Tweeter Header"](/docs/TweeterHeader.png)
 
 There are 2 stock tweets already in in the initial-tweets.json:
-!["Initial Tweets"](/docs/Initial%20Tweets.png)
+!["Initial Tweets"](/docs/InitialTweets.png)
 
 As there will only be one user on the app, any tweet submitted will be radomly given a username, handle, and image:
-!["Example Tweets"](/docs/Example%20Tweets.png)
+!["Example Tweets"](/docs/ExampleTweets.png)
 
 The page has responsive design for above and below 768px:
 !["Responsive"](/docs/Responsive.png)
